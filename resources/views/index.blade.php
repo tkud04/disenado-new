@@ -1,0 +1,15 @@
+<?php
+include('head.php');
+include('banner.php');
+include('nav.php');
+include('about.php');
+include('services.php');
+include('cta.php');
+include('portfolio.php');
+include('features.php');
+include('testimonials.php');
+include('blog.php');
+include('contact.php');
+include('footer.php');
+include('foot.php');
+?>
