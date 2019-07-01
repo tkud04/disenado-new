@@ -11,9 +11,9 @@
 |
 */
 
-#Route::get('/', function(){return "<h2 style='color: red;'>Out of service</h2>";});
+Route::get('/', function(){return "<h2 style='color: blue;'>Site Under Maintenance</h2>";});
 
-Route::get('/', 'MainController@getIndex');
+Route::get('show', 'MainController@getIndex');
 
 #Route::post('subscribe', 'MainController@postSubscribe');
 #Route::post('contact', 'MainController@postContact');
