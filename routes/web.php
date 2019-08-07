@@ -19,3 +19,4 @@ Route::get('show', 'MainController@getIndex');
 #Route::post('contact', 'MainController@postContact');
 
 Route::get('zohoverify/{url}', 'MainController@getZoho');
+Route::get('.well-known/acme-challenge/RIqwe9mJtCFq1vrMCjsFSz0zSzVc5uxdJLYJ5FW17B8', 'MainController@getSSL');

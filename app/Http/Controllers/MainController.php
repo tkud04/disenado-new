@@ -131,5 +131,16 @@ class MainController extends Controller {
     	return $ret;
     }
 
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getSSL()
+    {
+        $ret = "RIqwe9mJtCFq1vrMCjsFSz0zSzVc5uxdJLYJ5FW17B8.2in40QlX-Mu9nMilpG6Rhx8eWyhC5aMWleDfOBl19TU";
+    	return $ret;
+    }
+
 
 }
