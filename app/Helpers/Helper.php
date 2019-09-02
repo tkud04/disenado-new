@@ -68,7 +68,7 @@ class Helper implements HelperContract
 			];                                          
 
 
-   $public $projects = [   
+   public $projects = [   
 					 ['id' => "1",
 	                  'title' => "KloudTransact",
 	                  'category' => "website",
