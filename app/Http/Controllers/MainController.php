@@ -33,8 +33,8 @@ class MainController extends Controller {
 			$user = Auth::user();
 		}
 		
-		
-    	return view('index',compact(['user']));
+		$gallery = $this->helpers->getProjects();
+    	return view('index',compact(['user','gallery']));
     }
 	
     /**
