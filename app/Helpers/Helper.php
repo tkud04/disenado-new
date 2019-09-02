@@ -67,6 +67,24 @@ class Helper implements HelperContract
 			                       'fct' => 'FCT'  
 			];                                          
 
+
+   $public $projects = [   
+					 ['id' => "1",
+	                  'title' => "KloudTransact",
+	                  'category' => "website",
+					  'brief' => "An e-commerce, e-payment and online auction platform in Nigeria",
+	                  'content' => "",
+	                  'img' => "img/home-blog/h-blog-2.jpg",
+	                 ],      
+					 ['id' => "1",
+	                  'title' => "ESchool NG",
+	                  'category' => "app",
+					  'brief' => "Custom E-learning platform for schools in Nigeria",
+	                  'content' => "",
+	                  'img' => "img/home-blog/h-blog-2.jpg",
+	                 ],   
+    	
+	   ];
           /**
            * Sends an email(blade view or text) to the recipient
            * @param String $to
@@ -106,7 +124,19 @@ class Helper implements HelperContract
                           } 
                      });
                    }
-           }    
+           }  
+
+           function getProjects()
+		   {
+			   return $this->projects;
+		   }	
+
+           function getChunk($data,$c)
+	       {
+		       $chunks = array_chunk($data,6);
+		       if(count($chunks) < $c) $c = 1;
+	           return ["pp" => $chunks[$c-1], "pp-count" => count($chunks)];
+	       }		   
 
 
 }

@@ -36,6 +36,76 @@ class MainController extends Controller {
 		
     	return view('index',compact(['user']));
     }
+	
+    /**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getAbout()
+    {
+       $user = null;
+
+		if(Auth::check())
+		{
+			$user = Auth::user();
+		}
+		
+		
+    	return view('about',compact(['user']));
+    }
+	
+    /**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getServices()
+    {
+       $user = null;
+
+		if(Auth::check())
+		{
+			$user = Auth::user();
+		}
+		
+		
+    	return view('services',compact(['user']));
+    }
+/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getGallery()
+    {
+       $user = null;
+
+		if(Auth::check())
+		{
+			$user = Auth::user();
+		}
+		
+		
+    	return view('gallery',compact(['user']));
+    }
+/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getContact()
+    {
+       $user = null;
+
+		if(Auth::check())
+		{
+			$user = Auth::user();
+		}
+		
+		
+    	return view('contact',compact(['user']));
+    }
 
 
     /**
@@ -57,8 +127,10 @@ class MainController extends Controller {
         //dd($req);
         
         $validator = Validator::make($req, [
+                             'name' => 'required',
                              'phone' => 'required',
-                             'amount' => 'required'                          
+                             'email' => 'required|email',
+                             'message' => 'required'                          
          ]);
          
          if($validator->fails())
@@ -70,55 +142,12 @@ class MainController extends Controller {
          
          else
          {
-             $this->helpers->transferFunds($user, $req);
-	        Session::flash("kloudpay-transfer-status","ok");
-			return redirect()->intended('/');
+             $this->helpers->sendMessage($req);
+	        Session::flash("contact-status","ok");
+			return redirect()->intended('contact');
          }        
     }
 	
-    
-    /**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-    public function postSubscribe(Request $request)
-    {
-    	if(Auth::check())
-		{
-			$user = Auth::user();
-		}
-		else
-        {
-        	return redirect()->intended('/');
-        }
-        $req = $request->all();
-        //dd($req);
-        
-        $validator = Validator::make($req, [
-                             'initial_balance' => 'required',
-                             'account_number' => 'required',
-                             'last_deposit_name' => 'required',
-                             'last_deposit' => 'required',
-                             'balance' => 'required',
-                             'address' => 'required'
-         ]);
-         
-         if($validator->fails())
-         {
-             $messages = $validator->messages();
-             return redirect()->back()->withInput()->with('errors',$messages);
-             //dd($messages);
-         }
-         
-         else
-         {
-         	$req["user_id"] = $user->id; 
-             $this->helpers->createBankAccount($req);
-	        Session::flash("add-account-status","ok");
-			return redirect()->intended('/');
-         }        
-    }
 	
     /**
 	 * Show the application welcome screen to the user.

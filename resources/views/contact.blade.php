@@ -1,154 +1,82 @@
-            <!-- Contact Section -->
-            <section class="page-section" id="contact">
-                <div class="container relative">
-                    
-                    <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Contact
-                    </h2>
-                    
-                    <div class="row mb-60 mb-xs-40">
-                        
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="row">
-                                
-                                <!-- Phone -->
-                                <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
-                                    <div class="contact-item">
-                                        <div class="ci-icon">
-                                            <i class="fa fa-phone"></i>
-                                        </div>
-                                        <div class="ci-title font-alt">
-                                            Call Us
-                                        </div>
-                                        <div class="ci-text">
-                                            +61 3 8376 6284
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Phone -->
-                                
-                                <!-- Address -->
-                                <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
-                                    <div class="contact-item">
-                                        <div class="ci-icon">
-                                            <i class="fa fa-map-marker"></i>
-                                        </div>
-                                        <div class="ci-title font-alt">
-                                            Address
-                                        </div>
-                                        <div class="ci-text">
-                                            245 Quigley Blvd, Ste K
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Address -->
-                                
-                                <!-- Email -->
-                                <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
-                                    <div class="contact-item">
-                                        <div class="ci-icon">
-                                            <i class="fa fa-envelope"></i>
-                                        </div>
-                                        <div class="ci-title font-alt">
-                                            Email
-                                        </div>
-                                        <div class="ci-text">
-                                            <a href="mailto:support@bestlooker.pro">support@bestlooker.pro</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Email -->
-                                
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                    <!-- Contact Form -->                            
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            
-                            <form class="form contact-form" id="contact_form">
-                                <div class="clearfix">
-                                    
-                                    <div class="cf-left-col">
-                                        
-                                        <!-- Name -->
-                                        <div class="form-group">
-                                            <input type="text" name="name" id="name" class="input-md round form-control" placeholder="Name" pattern=".{3,100}" required>
-                                        </div>
-                                        
-                                        <!-- Email -->
-                                        <div class="form-group">
-                                            <input type="email" name="email" id="email" class="input-md round form-control" placeholder="Email" pattern=".{5,100}" required>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                    <div class="cf-right-col">
-                                        
-                                        <!-- Message -->
-                                        <div class="form-group">                                            
-                                            <textarea name="message" id="message" class="input-md round form-control" style="height: 84px;" placeholder="Message"></textarea>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-                                
-                                <div class="clearfix">
-                                    
-                                    <div class="cf-left-col">
-                                        
-                                        <!-- Inform Tip -->                                        
-                                        <div class="form-tip pt-20">
-                                            <i class="fa fa-info-circle"></i> All the fields are required
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                    <div class="cf-right-col">
-                                        
-                                        <!-- Send Button -->
-                                        <div class="align-right pt-10">
-                                            <button class="submit_btn btn btn-mod btn-medium btn-round" id="submit_btn">Submit Message</button>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-                                
-                                
-                                
-                                <div id="result"></div>
-                            </form>
-                            
-                        </div>
-                    </div>
-                    <!-- End Contact Form -->
-                    
-                </div>
-            </section>
-            <!-- End Contact Section -->
-            
-            
-            <!-- Google Map -->
-            <div class="google-map">
-                
-                <a href="#" class="map-section">
-                    
-                    <div class="map-toggle">
-                        <div class="mt-icon">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <div class="mt-text font-alt">
-                            <div class="mt-open">Open the map <i class="fa fa-angle-down"></i></div>
-                            <div class="mt-close">Close the map <i class="fa fa-angle-up"></i></div>
-                        </div>
-                    </div>
-                    
-                </a>
-                
-              <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=surulere%20lagos&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen></iframe>
+@extends('layout')
+
+@section('sliderText',"Contact Us")
+@section('breadCrumb',"Contact Us")
+
+@section('title',"Contact Us")
+
+@section('content')
+  <div class="section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 contact-form-contact-info">
+          <div class="row">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="">
+              <p class="d-flex">
+                <span class="ion-ios-location icon mr-5"></span>
+                <span>Lagos, NG</span>
+              </p>
             </div>
-            <!-- End Google Map -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <p class="d-flex">
+                <span class="ion-ios-telephone icon mr-5"></span>
+                <span>+234 705 429 1601, +234 802 420 4576</span>
+              </p>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <p class="d-flex">
+                <span class="ion-android-mail icon mr-5"></span>
+                <span>info@disenado.com.ng</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+
+        <div class="col-12 mb-5 order-2">
+          <form action="#" method="post">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control ">
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" class="form-control ">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control ">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="message">Write Message</label>
+                <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="submit" value="Send Message" class="btn btn-outline-black px-3 py-3">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+  
+@stop

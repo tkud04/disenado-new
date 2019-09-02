@@ -94,6 +94,32 @@
         }
       }
     });
+    
+    $('.get-in-touch').owlCarousel({
+      center: false,
+      items: 1,
+      loop: true,
+      autoplay: true,
+      stagePadding: 20,
+      margin:50,
+      nav: false,
+      dots: true,
+      smartSpeed: 1000,
+      navText: ['<span class="ion-chevron-left">', '<span class="ion-chevron-right">'],
+      responsive:{
+        600:{
+          stagePadding: 20,
+          items:1
+        },
+        800:{
+          stagePadding: 20,
+          items:2
+        },
+        1000:{
+          items:2
+        }
+      }
+    });
 
 	// owl carousel
 	var majorCarousel = $('.js-carousel-1');
@@ -216,6 +242,22 @@
   };
   slideImage();
   
+  let backToTop = function(){
+	  // Back to top button
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
+  $('.back-to-top').click(function(){
+    $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
+    return false;
+  });
+  }
+  
+  backToTop();
   
 
 })(jQuery);
