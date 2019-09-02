@@ -18,6 +18,7 @@ Route::get('about', 'MainController@getAbout');
 Route::get('services', 'MainController@getServices');
 Route::get('gallery', 'MainController@getGallery');
 Route::get('contact', 'MainController@getContact');
+Route::post('contact', 'MainController@postContact');
 
 #Route::post('subscribe', 'MainController@postSubscribe');
 Route::post('contact', 'MainController@postContact');
