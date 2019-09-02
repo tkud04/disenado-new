@@ -87,7 +87,8 @@ class MainController extends Controller {
 		}
 		
 		
-    	return view('gallery',compact(['user']));
+    	$gallery = $this->helpers->getProjects();
+    	return view('gallery',compact(['user','gallery']));
     }
 /**
 	 * Show the application welcome screen to the user.
